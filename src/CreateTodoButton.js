@@ -3,7 +3,7 @@ import './styles/CreateTodoButton.css'
 
 function CreateTodoButton(props) {
     return (
-        <button placeholder="What do you want?"></button>
+        <button className="add-button"><i className="fas fa-plus"></i></button>
     )
 }
 

@@ -3,10 +3,10 @@ import './styles/TodoItem.css'
 
 function TodoItem(props) {
     return (
-        <li>
-            <span><i class="fas fa-check"></i></span>
+        <li className="item-task">
+            <span className="check"><i className="fas fa-check"></i></span>
             <p>{props.text}</p>
-            <span><i class="fas fa-times"></i></span>
+            <span className="delete"><i className="far fa-trash-alt"></i></span>
         </li>
     )
 }

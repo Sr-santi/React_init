@@ -1,0 +1,14 @@
+.search-bar {
+    width: 330px;
+    font-size: 18px;
+    padding: 8px;
+    outline: none;
+    border: 1px solid white;
+    border-radius: 10px;
+    background-color: #073b4c;
+    color: white;
+}
+
+.search-bar::placeholder {
+    color: white;
+}

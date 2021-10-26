@@ -1,0 +1,13 @@
+.add-button {
+    outline: none;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    background-color: #118ab2;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

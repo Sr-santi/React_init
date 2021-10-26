@@ -3,7 +3,7 @@ import './styles/TodoSearch.css'
 
 function TodoSearch() {
     return (
-        <input placeholder="search"></input>
+        <input className="search-bar" placeholder="search"></input>
     )
 }
 

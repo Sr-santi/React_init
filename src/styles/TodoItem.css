@@ -1,0 +1,27 @@
+.item-task {
+    display: flex;
+    column-gap: 10px;
+    padding: 10px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px 0px;
+    width: 250px;
+    border-radius: 10px;
+    box-shadow: 0px 3px 20px 0px rgba(0,0,0,0.75);
+}
+
+.check {
+    width: 20px;
+    height: 20px;
+    border-radius: 3px;
+    background-color: #118ab2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.delete {
+    color: #ef476f;
+    font-size: 20px;
+}
