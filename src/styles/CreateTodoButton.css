@@ -6,6 +6,7 @@
     height: 30px;
     background-color: #118ab2;
     color: white;
+    cursor: pointer;
 
     display: flex;
     align-items: center;
