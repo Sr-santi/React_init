@@ -18,7 +18,18 @@ function App() {
   const completedTodos = todos.filter(todo => todo.completed).length;
   const totalTodos = todos.length;
   const visibleTodos = todos.filter(todo => todo.text.toLowerCase().includes(searchValue.toLowerCase()))
-  console.log(completedTodos)
+  const completeTodos = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text === text);
+    const newTodos = [...todos]
+    newTodos[todoIndex].completed = !newTodos[todoIndex].completed ;
+    setTodos(newTodos)
+  }
+  const deleteTodo = (text) => {
+    const todoIndex = todos.findIndex(todo => todo.text === text);
+    todos.splice(todoIndex,1);
+    const newTodos = [...todos]
+    setTodos(newTodos)
+  }
   return (
     <React.Fragment>
       <div className="container-task">
@@ -34,7 +45,9 @@ function App() {
             <TodoItem 
               key={todo.text} 
               text={todo.text}
-              completed={todo.completed}/>
+              completed={todo.completed}
+              onComplete={()=> completeTodos(todo.text)}
+              onDelete={()=> deleteTodo(todo.text)}/>
           ))}
         </TodoList>
         <CreateTodoButton/>
