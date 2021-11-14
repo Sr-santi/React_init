@@ -4,9 +4,7 @@ import './styles/TodoList.css'
 function TodoList(props) {
     return (
         <section>
-            <ul className="list-items">
-                {props.children}
-            </ul>
+            {props.children}
         </section>
     )
 }

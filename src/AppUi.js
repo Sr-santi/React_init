@@ -15,30 +15,43 @@ function AppUi(){
          completeTodos, 
          deleteTodo,
          openModal,
-         setOpenModal} = React.useContext(TodoContext);
+         setOpenModal,
+         completedTodos,
+         totalTodos,
+         searchValue, 
+         setSearchValue,
+         addTodo} = React.useContext(TodoContext);
     return (
         <React.Fragment>
             <div className="container-task">
-                <TodoCounter/>
+                <TodoCounter 
+                    completeTodos={completedTodos}
+                    totalTodos={totalTodos}/>
                 <div className="flex-wrapper">
-                    <TodoSearch/>
+                    <TodoSearch
+                        searchValue={searchValue} 
+                        setSearchValue={setSearchValue}/>
                     <CreateTodoButton
                         openModal={openModal}
                         setOpenModal={setOpenModal}/>
                 </div>
                 <TodoList>
-                {visibleTodos.map(todo => (
-                    <TodoItem 
-                    key={todo.text} 
-                    text={todo.text}
-                    completed={todo.completed}
-                    onComplete={()=> completeTodos(todo.text)}
-                    onDelete={()=> deleteTodo(todo.text)}/>
-                ))}
+                    <ul className="list-items">
+                        {visibleTodos.map(todo => (
+                            <TodoItem 
+                            key={todo.text} 
+                            text={todo.text}
+                            completed={todo.completed}
+                            onComplete={()=> completeTodos(todo.text)}
+                            onDelete={()=> deleteTodo(todo.text)}/>
+                        ))}
+                    </ul>
                 </TodoList>
                 {openModal && (
                 <Modal>
-                    <TodoForm/>
+                    <TodoForm
+                        addTodo={addTodo}
+                        setOpenModal={setOpenModal}/>
                 </Modal>
                 )}
                 
