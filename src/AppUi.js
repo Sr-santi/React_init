@@ -21,11 +21,12 @@ function AppUi(){
          searchValue, 
          setSearchValue,
          addTodo} = React.useContext(TodoContext);
+         console.log(totalTodos, completedTodos)
     return (
         <React.Fragment>
             <div className="container-task">
                 <TodoCounter 
-                    completeTodos={completedTodos}
+                    completedTodos={completedTodos}
                     totalTodos={totalTodos}/>
                 <div className="flex-wrapper">
                     <TodoSearch
@@ -50,8 +51,8 @@ function AppUi(){
                 {openModal && (
                 <Modal>
                     <TodoForm
-                        addTodo={addTodo}
-                        setOpenModal={setOpenModal}/>
+                        setOpenModal={setOpenModal}
+                        addTodo={addTodo}/>
                 </Modal>
                 )}
                 

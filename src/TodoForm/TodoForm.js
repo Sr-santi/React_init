@@ -1,19 +1,19 @@
 import React from 'react';
 import './TodoForm.css';
 
-function TodoForm(addTodo, setOpenModal) {
+function TodoForm(props) {
     const [newTodovalue, setNewTodoValue] = React.useState('');
     const onWrite = (event) => {
         setNewTodoValue(event.target.value);
     }
     const onCancel = () => {
-        setOpenModal(false)
+        props.setOpenModal(false)
     }
     const onAdd = (event) => {
         event.preventDefault();
-        addTodo(newTodovalue);
+        props.addTodo(newTodovalue);
         setNewTodoValue('');
-        setOpenModal(false)
+        props.setOpenModal(false)
     }
     return (
         <form className="form" onSubmit={onAdd}>
